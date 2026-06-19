@@ -22,7 +22,7 @@ function Navbar() {
 
             <h1
               className="text-2xl text-[#B76E79]"
-              style={{ fontFamily: "Playfair Display" }}
+              style=  {{ fontFamily: "Playfair Display" }}
             >
               PJ
             </h1>
@@ -125,7 +125,7 @@ function Navbar() {
           <Link
           to="/wishlist"
           className="text-lg hover:text-[#B76E79] transition duration-300"
-          onClick={() => setIsOpen(false)}
+          onClick={() => setMenuOpen(false)}
           >
           Wishlist ({wishlist.length})
          </Link>

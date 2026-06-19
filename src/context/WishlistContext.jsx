@@ -1,10 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const WishlistContext = createContext();
 
 function WishlistProvider({ children }) {
 
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState(() => {
+    const saved = localStorage.getItem("wishlist");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const toggleWishlist = (product) => {
 
@@ -26,16 +29,19 @@ function WishlistProvider({ children }) {
 
   };
 
-  return (
+  useEffect(() => {
+    localStorage.setItem(
+      "wishlist",
+      JSON.stringify(wishlist)
+    );
+  }, [wishlist]);
 
+  return (
     <WishlistContext.Provider
       value={{ wishlist, toggleWishlist }}
     >
-
       {children}
-
     </WishlistContext.Provider>
-
   );
 }
 
