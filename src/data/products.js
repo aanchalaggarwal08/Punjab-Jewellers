@@ -44,15 +44,6 @@ const products = [
       "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=1200&auto=format&fit=crop",
   },
 
-  {
-    id: 4,
-    name: "Bridal Necklace",
-      weight: "24g",
-    price: "₹ 54,999",
-    category: "bridal",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop",
-  },
 
   {
     id: 5,
