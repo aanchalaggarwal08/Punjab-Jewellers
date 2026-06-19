@@ -96,24 +96,24 @@ function CategoryPage() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
 
           {sortedProducts.map((product) => (
 
             <Link
               to={`/product/${product.id}`}
               key={product.id}
-              className="group w-full max-w-[280px] transition duration-500 hover:-translate-y-2"
+              className="group w-full transition duration-500 hover:-translate-y-2"
             >
 
               {/* Image */}
               <div className="overflow-hidden rounded-[30px] bg-[#F4ECE8] relative shadow-sm group-hover:shadow-2xl transition duration-500">
 
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="h-[260px] w-[280px] object-cover rounded-[30px] transition duration-700 group-hover:scale-105"
-                />
+              <img
+                 src={product.image}
+                 alt={product.name}
+                 className="w-full aspect-square object-contain p-2 rounded-[30px] transition duration-700 group-hover:scale-105"
+              />
 
                 {/* Wishlist */}
                 <button
@@ -140,7 +140,7 @@ function CategoryPage() {
 
               {/* Product Info */}
               <h2
-                className="text-3xl mt-5"
+                className="text-lg md:text-3xl mt-3"
                 style={{ fontFamily: "Playfair Display" }}
               >
                 {product.name}
